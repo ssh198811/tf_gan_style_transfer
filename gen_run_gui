@@ -1,0 +1,2 @@
+pyinstaller -D runGui.spec
+pyinstaller -D main.spec
