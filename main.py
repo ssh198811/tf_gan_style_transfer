@@ -12,6 +12,7 @@ from model.Generator import Generator
 from utils.save_img import save_sample
 from model_configuration_file.model_path import model_path_dict
 import sys
+import cv2
 
 if __name__ == "__main__":
 
@@ -25,12 +26,13 @@ if __name__ == "__main__":
     # parser.add_argument('--save_name', required=False,type=str, default=None, help='save img name')
     # args = parser.parse_args()
     ###########参数合法性处理############
-    sys_default_args = [16, "./source/", "as", "./predict_img/", None]
+    sys_default_args = [16, "./source/", "as", 100, "./predict_img/", None]
     min_factor = sys_default_args[0]
     img_path = sys_default_args[1]
     use_style = sys_default_args[2]
-    save_dir = sys_default_args[3]
-    save_name = sys_default_args[4]
+    lerp_factor = sys_default_args[3]
+    save_dir = sys_default_args[4]
+    save_name = sys_default_args[5]
 
     args_len = len(sys.argv)
 
@@ -45,10 +47,13 @@ if __name__ == "__main__":
             use_style = sys.argv[3]
     if args_len > 4:
         if sys.argv[4] != None:
-            save_dir = sys.argv[4]
+            lerp_factor = sys.argv[4]
     if args_len > 5:
         if sys.argv[5] != None:
-            save_name = sys.argv[5]
+            save_dir = sys.argv[5]
+    if args_len > 6:
+        if sys.argv[6] != None:
+            save_name = sys.argv[6]
 
     if min_factor%16!=0:
         min_factor=16
@@ -122,7 +127,15 @@ if __name__ == "__main__":
         else:
             save_path = save_dir+save_name
         save_sample(pre_img, save_path)
+
+        # 进行lerp操作
+        lerp_factor = float(lerp_factor)/100.0
+        alpha = 1.0 - lerp_factor
+        beta = lerp_factor
+        gamma = 0
+        img_src = cv2.imread(test_path)
+        img_dst = cv2.imread(save_path)
+        img_add = cv2.addWeighted(img_src, alpha, img_dst, beta, gamma)
+        cv2.imwrite(save_path, img_add)
         file_dir, file_name = os.path.split(save_path)
         print("%s is save on %s dir"%(file_name,file_dir))
-
-

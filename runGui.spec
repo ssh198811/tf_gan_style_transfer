@@ -2,7 +2,7 @@
 
 block_cipher = None
 
-data_map = [("ui/icons.tga","ui"),("tf_model_p","tf_model_p"),("icons","icons")]
+data_map = [("ui/icons.tga","ui"),("tf_model_p","tf_model_p"),("icons","icons"),("temp","temp")]
 
 a = Analysis(['runGui.py'],
              pathex=['E:\\Users\\shishaohua.SHISHAOHUA1\\Downloads\\gan_tf\\ganilla'],

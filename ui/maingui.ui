@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>641</width>
-    <height>482</height>
+    <width>933</width>
+    <height>548</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,8 +18,8 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>340</y>
-      <width>601</width>
+      <y>420</y>
+      <width>901</width>
       <height>91</height>
      </rect>
     </property>
@@ -73,8 +73,8 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>10</y>
+      <x>840</x>
+      <y>20</y>
       <width>81</width>
       <height>21</height>
      </rect>
@@ -89,29 +89,66 @@
       <x>20</x>
       <y>40</y>
       <width>291</width>
-      <height>291</height>
+      <height>371</height>
      </rect>
     </property>
     <property name="title">
      <string>原始图片</string>
     </property>
-    <widget class="QLabel" name="label_src">
+    <widget class="QListWidget" name="list_src">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>20</y>
-       <width>256</width>
-       <height>256</height>
+       <y>290</y>
+       <width>271</width>
+       <height>71</height>
       </rect>
      </property>
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <property name="text">
-      <string/>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOn</enum>
+     </property>
+     <property name="sizeAdjustPolicy">
+      <enum>QAbstractScrollArea::AdjustToContents</enum>
+     </property>
+     <property name="autoScroll">
+      <bool>false</bool>
+     </property>
+     <property name="flow">
+      <enum>QListView::LeftToRight</enum>
+     </property>
+     <property name="resizeMode">
+      <enum>QListView::Adjust</enum>
+     </property>
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <property name="viewMode">
+      <enum>QListView::ListMode</enum>
+     </property>
+     <property name="currentRow">
+      <number>-1</number>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="list_src_show">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>271</width>
+       <height>251</height>
+      </rect>
+     </property>
+     <property name="resizeMode">
+      <enum>QListView::Adjust</enum>
      </property>
     </widget>
    </widget>
@@ -120,32 +157,71 @@
      <rect>
       <x>320</x>
       <y>40</y>
-      <width>301</width>
-      <height>291</height>
+      <width>291</width>
+      <height>371</height>
      </rect>
     </property>
     <property name="title">
      <string>风格图片</string>
     </property>
-    <widget class="QLabel" name="label_dst">
+    <widget class="QListWidget" name="list_dst_show">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>20</y>
-       <width>256</width>
-       <height>256</height>
+       <x>10</x>
+       <y>30</y>
+       <width>271</width>
+       <height>251</height>
       </rect>
      </property>
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text">
-      <string/>
+     <property name="resizeMode">
+      <enum>QListView::Adjust</enum>
      </property>
     </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_3">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>40</y>
+      <width>301</width>
+      <height>371</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>微调</string>
+    </property>
+    <widget class="QListWidget" name="list_lerp_show">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>271</width>
+       <height>251</height>
+      </rect>
+     </property>
+     <property name="resizeMode">
+      <enum>QListView::Adjust</enum>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QSlider" name="lerp_slider">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>20</y>
+      <width>201</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="value">
+     <number>100</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -153,7 +229,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>641</width>
+     <width>933</width>
      <height>18</height>
     </rect>
    </property>
@@ -170,7 +246,7 @@
    <hints>
     <hint type="sourcelabel">
      <x>116</x>
-     <y>498</y>
+     <y>448</y>
     </hint>
     <hint type="destinationlabel">
      <x>130</x>
@@ -186,7 +262,7 @@
    <hints>
     <hint type="sourcelabel">
      <x>45</x>
-     <y>75</y>
+     <y>48</y>
     </hint>
     <hint type="destinationlabel">
      <x>171</x>
@@ -201,12 +277,44 @@
    <slot>save_dst_img()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>362</x>
-     <y>77</y>
+     <x>882</x>
+     <y>58</y>
     </hint>
     <hint type="destinationlabel">
      <x>431</x>
      <y>37</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lerp_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>lerp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>679</x>
+     <y>50</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>597</x>
+     <y>25</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>list_src</sender>
+   <signal>clicked(QModelIndex)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>src_list_click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>77</x>
+     <y>383</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>312</x>
+     <y>378</y>
     </hint>
    </hints>
   </connection>
@@ -215,5 +323,7 @@
   <slot>stylelistClick()</slot>
   <slot>open_src_img()</slot>
   <slot>save_dst_img()</slot>
+  <slot>lerp()</slot>
+  <slot>src_list_click()</slot>
  </slots>
 </ui>
