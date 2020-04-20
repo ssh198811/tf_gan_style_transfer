@@ -10,9 +10,13 @@ import numpy as np
 import tensorflow as tf
 from model.Generator import Generator
 from utils.save_img import save_sample
-from model_configuration_file.model_path import model_path_dict
+# from model_configuration_file.model_path import model_path_dict
 import sys
 import cv2
+import loadDict
+from utils import img_process
+
+
 
 if __name__ == "__main__":
 
@@ -74,6 +78,12 @@ if __name__ == "__main__":
     else:
         raise FileExistsError("img_path do not exist")
     ###########################载入模型###############################################################
+    model_path_dict = {}
+    for pair in loadDict.load_dict():
+        key = pair['name']
+        value = pair['model']
+        model_path_dict[key] = value
+
     model_names_list=list(model_path_dict.keys())
     print(model_names_list)
     if use_style not in model_names_list:
@@ -129,13 +139,7 @@ if __name__ == "__main__":
         save_sample(pre_img, save_path)
 
         # 进行lerp操作
-        lerp_factor = float(lerp_factor)/100.0
-        alpha = 1.0 - lerp_factor
-        beta = lerp_factor
-        gamma = 0
-        img_src = cv2.imread(test_path)
-        img_dst = cv2.imread(save_path)
-        img_add = cv2.addWeighted(img_src, alpha, img_dst, beta, gamma)
+        img_add = img_process.lerp_img(test_path,save_path,lerp_factor)
         cv2.imwrite(save_path, img_add)
         file_dir, file_name = os.path.split(save_path)
         print("%s is save on %s dir"%(file_name,file_dir))

@@ -1,0 +1,49 @@
+{
+    "pairs": [
+        {
+            "name": "as",
+            "icon": "icons/1.jpg",
+            "model": "tf_model_p/as_model.npy"
+        },
+        {
+            "name": "dm",
+            "icon": "icons/2.jpg",
+            "model": "tf_model_p/dm_model.npy"
+        },
+        {
+			"name": "kh",
+            "icon": "icons/3.jpg",
+            "model": "tf_model_p/kh_model.npy"
+        },
+        {
+			"name": "kp",
+            "icon": "icons/4.jpg",
+            "model": "tf_model_p/kp_model.npy"
+        },
+        {
+			"name": "miyaziki",
+            "icon": "icons/6.jpg",
+            "model": "tf_model_p/miyaziki_model.npy"
+        },
+        {
+			"name": "pp",
+            "icon": "icons/7.jpg",
+            "model": "tf_model_p/pp_model.npy"
+        },
+        {
+			"name": "rc",
+            "icon": "icons/8.jpg",
+            "model": "tf_model_p/rc_model.npy"
+        },
+        {
+			"name": "sc",
+            "icon": "icons/9.jpg",
+            "model": "tf_model_p/sc_model.npy"
+        },
+        {
+			"name": "tr",
+            "icon": "icons/11.jpg",
+            "model": "tf_model_p/tr_model.npy"
+        }
+    ]
+}

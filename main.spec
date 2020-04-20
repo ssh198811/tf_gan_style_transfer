@@ -1,10 +1,10 @@
 # -*- mode: python ; coding: utf-8 -*-
 
 block_cipher = None
-data_map = [("ui/icons.tga","ui"),("tf_model_p","tf_model_p"),("icons","icons"),("source","source"),("predict_img","predict_img"),("temp","temp")]
+data_map = [("ui/icons.tga","ui"),("tf_model_p","tf_model_p"),("icons","icons"),("source","source"),("predict_img","predict_img"),("temp","temp"),("dict.json",".")]
 
 a = Analysis(['main.py'],
-             pathex=['E:\\Users\\shishaohua.SHISHAOHUA1\\Downloads\\gan_tf\\ganilla'],
+             pathex=['E:\\Users\\shishaohua.SHISHAOHUA1\\Downloads\\tf_gan_style_transfer'],
              binaries=[],
              datas=data_map,
              hiddenimports=[],

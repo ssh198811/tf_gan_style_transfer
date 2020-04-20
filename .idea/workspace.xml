@@ -1,18 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4c4aba9d-64b7-4b3d-9ddb-ac4d78aef30c" name="Default Changelist" comment="" />
+    <list default="true" id="6db08b88-87c0-40d0-bdcf-613f8bd10513" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/tf_gan_style_transfer.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loadDict.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/img_process.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/text_filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ganilla.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/icons/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/icons/1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/icons/11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/icons/11.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/icons/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/icons/2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/icons/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/icons/3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/icons/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/icons/4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/icons/6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/icons/6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/icons/7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/icons/7.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/icons/8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/icons/8.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/icons/9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/icons/9.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.spec" beforeDir="false" afterPath="$PROJECT_DIR$/main.spec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_configuration_file/model_path.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_configuration_file/model_path.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/predict_img/test1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/predict_img/test1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/predict_img/test2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/predict_img/test2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runGui.py" beforeDir="false" afterPath="$PROJECT_DIR$/runGui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runGui.spec" beforeDir="false" afterPath="$PROJECT_DIR$/runGui.spec" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/ganilla$Generator.coverage" NAME="Generator Coverage Results" MODIFIED="1586941421800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model" />
-    <SUITE FILE_PATH="coverage/ganilla$PyramidFeatures.coverage" NAME="PyramidFeatures Coverage Results" MODIFIED="1586933003672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model" />
-    <SUITE FILE_PATH="coverage/ganilla$BasicBlock_Ganilla.coverage" NAME="BasicBlock_Ganilla Coverage Results" MODIFIED="1586941300895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model" />
-    <SUITE FILE_PATH="coverage/ganilla$pytorch_npy_to_tf_npy.coverage" NAME="pytorch_npy_to_tf_npy Coverage Results" MODIFIED="1586941712883" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ganilla$test.coverage" NAME="test Coverage Results" MODIFIED="1586943759949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -24,40 +44,31 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1aZXlecOEozB9DYSYp67HBgf4KW" />
+  <component name="ProjectId" id="1af4ktbHs0HtjQS0KOoIvKSbSXt" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\test\ganilla" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Python.runGui">
-    <configuration name="Generator" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="ganilla" />
+  <component name="RunManager" selected="Python.main">
+    <configuration name="loadDict" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="tf_gan_style_transfer" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/model" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/model/Generator.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/loadDict.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -67,7 +78,7 @@
       <method v="2" />
     </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="ganilla" />
+      <module name="tf_gan_style_transfer" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -79,29 +90,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="16 ./source/ miyaziki 100" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytorch_npy_to_tf_npy" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="ganilla" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pytorch_npy_to_tf_npy.py" />
-      <option name="PARAMETERS" value="" />
+      <option name="PARAMETERS" value="16 E:/测试/ dm 50 E:/测试/out/" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -110,7 +99,7 @@
       <method v="2" />
     </configuration>
     <configuration name="runGui" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="ganilla" />
+      <module name="tf_gan_style_transfer" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -130,42 +119,16 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="ganilla" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Python.Generator" />
+      <item itemvalue="Python.loadDict" />
       <item itemvalue="Python.main" />
-      <item itemvalue="Python.pytorch_npy_to_tf_npy" />
       <item itemvalue="Python.runGui" />
-      <item itemvalue="Python.test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.runGui" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.pytorch_npy_to_tf_npy" />
-        <item itemvalue="Python.Generator" />
+        <item itemvalue="Python.runGui" />
+        <item itemvalue="Python.loadDict" />
       </list>
     </recent_temporary>
   </component>
@@ -186,95 +149,78 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4c4aba9d-64b7-4b3d-9ddb-ac4d78aef30c" name="Default Changelist" comment="" />
-      <created>1586826432281</created>
+      <changelist id="6db08b88-87c0-40d0-bdcf-613f8bd10513" name="Default Changelist" comment="" />
+      <created>1587113460802</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1586826432281</updated>
-      <workItem from="1586826433432" duration="1549000" />
-      <workItem from="1586828002058" duration="6329000" />
-      <workItem from="1586844492883" duration="11691000" />
-      <workItem from="1586911769793" duration="431000" />
-      <workItem from="1586912738292" duration="3290000" />
-      <workItem from="1586918166104" duration="4508000" />
-      <workItem from="1586930150973" duration="9862000" />
+      <updated>1587113460802</updated>
     </task>
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37660000" />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
   <component name="WindowStateProjectService">
-    <state x="736" y="356" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587106866507">
+    <state x="736" y="356" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587368819111">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="736" y="356" key="#com.intellij.execution.impl.EditConfigurationsDialog/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587106866507" />
-    <state x="1010" y="503" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587040866682">
+    <state x="736" y="356" key="#com.intellij.execution.impl.EditConfigurationsDialog/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587368819111" />
+    <state width="1878" height="466" key="DebuggerActiveHint" timestamp="1587367309921">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1010" y="503" key="#com.intellij.fileTypes.FileTypeChooser/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587040866682" />
-    <state x="1036" y="403" key="#xdebugger.evaluate" timestamp="1587037319847">
+    <state width="1878" height="466" key="DebuggerActiveHint/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587367309921" />
+    <state width="1837" height="400" key="GridCell.Tab.0.bottom" timestamp="1587368844338">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1036" y="403" key="#xdebugger.evaluate/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587037319847" />
-    <state width="1098" height="466" key="DebuggerActiveHint" timestamp="1587037349746">
+    <state width="1837" height="400" key="GridCell.Tab.0.bottom/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587368844338" />
+    <state width="1837" height="400" key="GridCell.Tab.0.center" timestamp="1587368844337">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1098" height="466" key="DebuggerActiveHint/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587037349746" />
-    <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1586945985973">
+    <state width="1837" height="400" key="GridCell.Tab.0.center/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587368844337" />
+    <state width="1837" height="400" key="GridCell.Tab.0.left" timestamp="1587368844337">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1060" y="455" key="FileChooserDialogImpl/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1586945985973" />
-    <state width="2575" height="505" key="GridCell.Tab.0.bottom" timestamp="1587111294796">
+    <state width="1837" height="400" key="GridCell.Tab.0.left/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587368844337" />
+    <state width="1837" height="400" key="GridCell.Tab.0.right" timestamp="1587368844338">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2575" height="505" key="GridCell.Tab.0.bottom/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587111294796" />
-    <state width="2561" height="351" key="GridCell.Tab.0.bottom/3840.383.2560.1380/0.0.2560.1400@3840.383.2560.1380" timestamp="1587089688292" />
-    <state width="2575" height="505" key="GridCell.Tab.0.center" timestamp="1587111294796">
+    <state width="1837" height="400" key="GridCell.Tab.0.right/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587368844338" />
+    <state width="1730" height="492" key="GridCell.Tab.1.bottom" timestamp="1587367321060">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2575" height="505" key="GridCell.Tab.0.center/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587111294796" />
-    <state width="2561" height="351" key="GridCell.Tab.0.center/3840.383.2560.1380/0.0.2560.1400@3840.383.2560.1380" timestamp="1587089688292" />
-    <state width="2575" height="505" key="GridCell.Tab.0.left" timestamp="1587111294796">
+    <state width="1730" height="492" key="GridCell.Tab.1.bottom/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587367321060" />
+    <state width="1730" height="492" key="GridCell.Tab.1.center" timestamp="1587367321060">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2575" height="505" key="GridCell.Tab.0.left/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587111294796" />
-    <state width="2561" height="351" key="GridCell.Tab.0.left/3840.383.2560.1380/0.0.2560.1400@3840.383.2560.1380" timestamp="1587089688292" />
-    <state width="2575" height="505" key="GridCell.Tab.0.right" timestamp="1587111294796">
+    <state width="1730" height="492" key="GridCell.Tab.1.center/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587367321060" />
+    <state width="1730" height="492" key="GridCell.Tab.1.left" timestamp="1587367321060">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2575" height="505" key="GridCell.Tab.0.right/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587111294796" />
-    <state width="2561" height="351" key="GridCell.Tab.0.right/3840.383.2560.1380/0.0.2560.1400@3840.383.2560.1380" timestamp="1587089688292" />
-    <state width="2561" height="500" key="GridCell.Tab.1.bottom" timestamp="1587104881010">
+    <state width="1730" height="492" key="GridCell.Tab.1.left/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587367321060" />
+    <state width="1730" height="492" key="GridCell.Tab.1.right" timestamp="1587367321060">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2561" height="500" key="GridCell.Tab.1.bottom/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587104881010" />
-    <state width="2561" height="500" key="GridCell.Tab.1.center" timestamp="1587104881010">
+    <state width="1730" height="492" key="GridCell.Tab.1.right/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587367321060" />
+    <state x="782" y="343" key="SettingsEditor" timestamp="1587113517532">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2561" height="500" key="GridCell.Tab.1.center/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587104881010" />
-    <state width="2561" height="500" key="GridCell.Tab.1.left" timestamp="1587104881010">
+    <state x="782" y="343" key="SettingsEditor/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587113517532" />
+    <state x="965" y="525" key="com.intellij.ide.util.TipDialog" timestamp="1587347277048">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2561" height="500" key="GridCell.Tab.1.left/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587104881010" />
-    <state width="2561" height="500" key="GridCell.Tab.1.right" timestamp="1587104881010">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2561" height="500" key="GridCell.Tab.1.right/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587104881010" />
-    <state x="782" y="343" key="SettingsEditor" timestamp="1586946004906">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="782" y="343" key="SettingsEditor/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1586946004906" />
-    <state x="965" y="525" key="com.intellij.ide.util.TipDialog" timestamp="1587001175546">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="965" y="525" key="com.intellij.ide.util.TipDialog/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587001175546" />
-    <state x="961" y="433" width="638" height="534" key="find.popup" timestamp="1587005097410">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="961" y="433" width="638" height="534" key="find.popup/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587005097410" />
+    <state x="965" y="525" key="com.intellij.ide.util.TipDialog/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587347277048" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/loadDict.py</url>
+          <line>7</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>98</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

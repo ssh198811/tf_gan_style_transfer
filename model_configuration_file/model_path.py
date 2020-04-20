@@ -16,6 +16,4 @@ model_path_dict={
     "sc":"./tf_model_p/sc_model.npy",
     "sd":"./tf_model_p/sd_model.npy",
     "tr":"./tf_model_p/tr_model.npy",
-
-
 }

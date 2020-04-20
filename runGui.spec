@@ -2,10 +2,10 @@
 
 block_cipher = None
 
-data_map = [("ui/icons.tga","ui"),("tf_model_p","tf_model_p"),("icons","icons"),("temp","temp")]
+data_map = [("ui/icons.tga","ui"),("tf_model_p","tf_model_p"),("icons","icons"),("temp","temp"),("dict.json",".")]
 
 a = Analysis(['runGui.py'],
-             pathex=['E:\\Users\\shishaohua.SHISHAOHUA1\\Downloads\\gan_tf\\ganilla'],
+             pathex=['E:\\Users\\shishaohua.SHISHAOHUA1\\Downloads\\tf_gan_style_transfer'],
              binaries=[],
              datas=data_map,
              hiddenimports=[],
@@ -22,12 +22,12 @@ exe = EXE(pyz,
           a.scripts,
           [],
           exclude_binaries=True,
-          name='runGui',
+          name='jx3AiPic',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
-          console=False , icon='E:\\Users\\shishaohua.SHISHAOHUA1\\Downloads\\gan_tf\\ganilla\\main.ico')
+          console=True , icon='E:\\Users\\shishaohua.SHISHAOHUA1\\Downloads\\tf_gan_style_transfer\\main.ico')
 coll = COLLECT(exe,
                a.binaries,
                a.zipfiles,
@@ -35,4 +35,4 @@ coll = COLLECT(exe,
                strip=False,
                upx=True,
                upx_exclude=[],
-               name='runGui')
+               name='jx3AiPic')

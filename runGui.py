@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QMenu, QMessageBox, QListWidgetItem, QListWidget
 from PyQt5.QtCore import pyqtSignal, QThread, Qt, QUrl, QPoint, QSize
 from PyQt5 import QtGui
-from PyQt5.QtGui import QIcon, QDesktopServices, QPixmap
+from PyQt5.QtGui import QIcon, QDesktopServices, QPixmap, QPainter
 from ui import maingui
 import sys
 import os
@@ -12,6 +12,9 @@ from utils.save_img import save_sample
 import qdarkstyle
 import tensorflow as tf
 import cv2
+import loadDict
+
+from utils import img_process
 
 class ApplicationWindow(QMainWindow):
     def __init__(self):
@@ -27,34 +30,39 @@ class ApplicationWindow(QMainWindow):
         self.style_img_path = []
         self.style_model_path = []
         self.src_img_path = None
+        self.pairs = loadDict.load_dict()
 
-        # match style 1
-        self.style_img_path.append("icons/1.jpg")
-        self.style_model_path.append("tf_model_p/as_model.npy")
+        for pair in self.pairs:
+            self.style_img_path.append(pair['icon'])
+            self.style_model_path.append(pair['model'])
 
-        self.style_img_path.append("icons/2.jpg")
-        self.style_model_path.append("tf_model_p/dm_model.npy")
-
-        self.style_img_path.append("icons/3.jpg")
-        self.style_model_path.append("tf_model_p/kh_model.npy")
-
-        self.style_img_path.append("icons/4.jpg")
-        self.style_model_path.append("tf_model_p/kp_model.npy")
-
-        self.style_img_path.append("icons/6.jpg")
-        self.style_model_path.append("tf_model_p/miyaziki_model.npy")
-
-        self.style_img_path.append("icons/7.jpg")
-        self.style_model_path.append("tf_model_p/pp_model.npy")
-
-        self.style_img_path.append("icons/8.jpg")
-        self.style_model_path.append("tf_model_p/rc_model.npy")
-
-        self.style_img_path.append("icons/9.jpg")
-        self.style_model_path.append("tf_model_p/sc_model.npy")
-
-        self.style_img_path.append("icons/11.jpg")
-        self.style_model_path.append("tf_model_p/tr_model.npy")
+        # # match style 1
+        # self.style_img_path.append("icons/1.jpg")
+        # self.style_model_path.append("tf_model_p/as_model.npy")
+        #
+        # self.style_img_path.append("icons/2.jpg")
+        # self.style_model_path.append("tf_model_p/dm_model.npy")
+        #
+        # self.style_img_path.append("icons/3.jpg")
+        # self.style_model_path.append("tf_model_p/kh_model.npy")
+        #
+        # self.style_img_path.append("icons/4.jpg")
+        # self.style_model_path.append("tf_model_p/kp_model.npy")
+        #
+        # self.style_img_path.append("icons/6.jpg")
+        # self.style_model_path.append("tf_model_p/miyaziki_model.npy")
+        #
+        # self.style_img_path.append("icons/7.jpg")
+        # self.style_model_path.append("tf_model_p/pp_model.npy")
+        #
+        # self.style_img_path.append("icons/8.jpg")
+        # self.style_model_path.append("tf_model_p/rc_model.npy")
+        #
+        # self.style_img_path.append("icons/9.jpg")
+        # self.style_model_path.append("tf_model_p/sc_model.npy")
+        #
+        # self.style_img_path.append("icons/11.jpg")
+        # self.style_model_path.append("tf_model_p/tr_model.npy")
 
 
     def load_style_list(self):
@@ -63,7 +71,8 @@ class ApplicationWindow(QMainWindow):
         self.style_img_icon = []
         for img_path in self.style_img_path:
             pix = QPixmap(img_path)
-            pix.scaled(QSize(64,64))
+            # pix.scaled(QSize(64,64))
+
             icon = QIcon()
             icon.addPixmap(pix)
             # img = QPixmap(img_path)
@@ -77,6 +86,8 @@ class ApplicationWindow(QMainWindow):
         while index < len(self.style_img_path):
             item = QListWidgetItem()
             item.setIcon(self.style_img_icon[index])
+            item.setSizeHint(QSize(64,64))
+            item.setTextAlignment(Qt.AlignHCenter|Qt.AlignVCenter)
             self.ui.list_style.addItem(item)
             index += 1
 
@@ -170,6 +181,12 @@ class ApplicationWindow(QMainWindow):
         if len(fileNames_choose) == 0:
             print("\n取消选择")
             return
+        #
+        # for i, fileName in enumerate(fileNames_choose):
+        #     if self.is_contain_chinese(fileName) is True:
+        #         fileNames_choose[i] = os.path.
+
+
 
         self.src_img_path = fileNames_choose[0]
         # self.src_img = QPixmap(fileNames_choose[0])
@@ -203,11 +220,11 @@ class ApplicationWindow(QMainWindow):
         QApplication.processEvents()
 
     def load_scaled_src_img(self):
-        self.scaled_src_image = cv2.imread(self.src_img_path)
+        self.scaled_src_image = img_process.read_img(self.src_img_path)
         self.scaled_src_image = cv2.resize(self.scaled_src_image, (256, 256), interpolation=cv2.INTER_CUBIC)
 
     def load_scaled_dst_img(self):
-        self.scaled_dst_image = cv2.imread(self.temp_dst_img_path)
+        self.scaled_dst_image = img_process.read_img(self.temp_dst_img_path)
         self.scaled_dst_image = cv2.resize(self.scaled_dst_image, (256, 256), interpolation=cv2.INTER_CUBIC)
 
     def save_dst_img(self):
@@ -236,16 +253,9 @@ class ApplicationWindow(QMainWindow):
         if self.temp_dst_img_path is None:
             return
 
+
         lerp_value = self.ui.lerp_slider.value()
-        lerp_value = float(lerp_value/100.0)
-
-        alpha = 1.0 -lerp_value
-        beta = lerp_value
-        gamma = 0
-        img_src = cv2.imread(self.src_img_path)
-        img_dst = cv2.imread(self.temp_dst_img_path)
-
-        img_add = cv2.addWeighted(img_src, alpha, img_dst, beta, gamma)
+        img_add = img_process.lerp_img(self.src_img_path, self.temp_dst_img_path, lerp_value)
         self.update_lerp_view(img_add)
         return img_add
 
