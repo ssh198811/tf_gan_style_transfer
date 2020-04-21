@@ -1,2 +1,13 @@
 pyinstaller -D runGui.spec
+pyinstaller -D runGui10.1.spec
 pyinstaller -D main.spec
+
+# pyinstaller 打包失败的问题
+pip install https://github.com/pyinstaller/pyinstaller/archive/develop.zip
+
+# 出现Object arrays cannot be loaded when allow_pickle=False
+pip install numpy==1.16.1
+
+# 查看cuda版本
+cd C:\Program Files\NVIDIA Corporation\NVSMI
+然后输入 nvidia-smi

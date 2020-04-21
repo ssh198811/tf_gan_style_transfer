@@ -3,7 +3,7 @@ from PyQt5.QtCore import pyqtSignal, QThread, Qt, QUrl, QPoint, QSize
 from PyQt5 import QtGui
 from PyQt5.QtGui import QIcon, QDesktopServices, QPixmap, QPainter
 from ui import maingui
-import sys
+import sys, time
 import os
 from skimage import io
 import numpy as np
@@ -29,7 +29,10 @@ class ApplicationWindow(QMainWindow):
     def init_style(self):
         self.style_img_path = []
         self.style_model_path = []
+        self.src_img_paths = []
         self.src_img_path = None
+        self.temp_dst_img_path = None
+        self.dst_img = None
         self.pairs = loadDict.load_dict()
 
         for pair in self.pairs:
@@ -177,22 +180,15 @@ class ApplicationWindow(QMainWindow):
     def open_src_img(self):
         fileNames_choose, filetype = QFileDialog.getOpenFileNames(self, "选取图片文件",
                                                                 self.cwd,  # 起始路径
-                                                                "(*.jpg);;(*.png);;")  # 设置文件扩展名过滤,用双分号间隔
+                                                                "(*.jpg);;(*.png)")  # 设置文件扩展名过滤,用双分号间隔
         if len(fileNames_choose) == 0:
             print("\n取消选择")
             return
-        #
-        # for i, fileName in enumerate(fileNames_choose):
-        #     if self.is_contain_chinese(fileName) is True:
-        #         fileNames_choose[i] = os.path.
-
-
 
         self.src_img_path = fileNames_choose[0]
-        # self.src_img = QPixmap(fileNames_choose[0])
-        # self.src_img = self.src_img.scaledToHeight(256, mode=Qt.SmoothTransformation)
-        # self.src_img = self.src_img.scaledToWidth(256, mode=Qt.SmoothTransformation)
-        # self.ui.label_src.setPixmap(self.src_img)
+
+        if self.load_scaled_src_img() == -1:
+            return
 
         self.ui.list_src_show.clear()
         item = QListWidgetItem()
@@ -202,13 +198,15 @@ class ApplicationWindow(QMainWindow):
         self.ui.list_src_show.addItem(item)
 
 
-        self.load_scaled_src_img()
         #加载其他选中的文件
-        self.src_img_paths = fileNames_choose
+        for path in fileNames_choose:
+            self.src_img_paths.append(path)
+
         self.load_all_src_img()
 
     def load_all_src_img(self):
         # load src icon
+        self.ui.list_src.clear()
         index = 0
         while index < len(self.src_img_paths):
             item = QListWidgetItem()
@@ -221,31 +219,52 @@ class ApplicationWindow(QMainWindow):
 
     def load_scaled_src_img(self):
         self.scaled_src_image = img_process.read_img(self.src_img_path)
+        if self.scaled_src_image is None:
+            QMessageBox.information(self, "错误提示", f"无法打开图片，请确认图片文件 {self.src_img_path} 是否可用", QMessageBox.Ok)
+            return -1
+
         self.scaled_src_image = cv2.resize(self.scaled_src_image, (256, 256), interpolation=cv2.INTER_CUBIC)
+        return 0
 
     def load_scaled_dst_img(self):
         self.scaled_dst_image = img_process.read_img(self.temp_dst_img_path)
-        self.scaled_dst_image = cv2.resize(self.scaled_dst_image, (256, 256), interpolation=cv2.INTER_CUBIC)
+        if self.scaled_dst_image is None:
+            QMessageBox.information(self, "错误提示", f"无法打开图片，请确认图片文件 {self.temp_dst_img_path} 是否可用", QMessageBox.Ok)
+            return -1
 
+        self.scaled_dst_image = cv2.resize(self.scaled_dst_image, (256, 256), interpolation=cv2.INTER_CUBIC)
+        return 0
     def save_dst_img(self):
+        if self.dst_img is None:
+            QMessageBox.information(self, "操作提示", "请先生成风格图片再进行保存", QMessageBox.Ok)
+            return
+
         fileName_choose, filetype = QFileDialog.getSaveFileName(self,
                                                                 "文件保存",
                                                                 self.cwd,  # 起始路径
-                                                                "(*.jpg);;(*.png);;")
+                                                                "(*.jpg);;(*.png)")
         if fileName_choose == "":
             print("\n取消选择")
             return
+
+
 
         save_sample(self.dst_img, fileName_choose)
 
         self.resave_dst_img(self.src_img_path, self.temp_dst_img_path, fileName_choose)
 
     def resave_dst_img(self, src_img_path, dst_img_path, save_img_path):
+        # # 删除原文件
+        # os.unlink(save_img_path)
         # 重新保存当前
         self.src_img_path = src_img_path
         self.temp_dst_img_path = dst_img_path
         img_lerp = self.lerp()
-        cv2.imwrite(save_img_path, img_lerp)
+        img_process.write_img(img_lerp, save_img_path)
+
+        if os.path.exists (save_img_path) == False:
+            QMessageBox.information(self, "错误提示", "保存失败，请检查已经生成风格图片或者文件名是否合法", QMessageBox.Ok)
+
 
     def lerp(self):
         if self.src_img_path is None:
@@ -255,7 +274,11 @@ class ApplicationWindow(QMainWindow):
 
 
         lerp_value = self.ui.lerp_slider.value()
-        img_add = img_process.lerp_img(self.src_img_path, self.temp_dst_img_path, lerp_value)
+        img_add, ret = img_process.lerp_img(self.src_img_path, self.temp_dst_img_path, lerp_value)
+        if ret == -1:
+            QMessageBox.information(self, "错误提示", "当前风格图片尺寸与原图不符，请重新生成", QMessageBox.Ok)
+            return
+
         self.update_lerp_view(img_add)
         return img_add
 
@@ -286,14 +309,18 @@ class ApplicationWindow(QMainWindow):
         self.ui.list_dst_show.clear()
         self.ui.list_lerp_show.clear()
         self.ui.lerp_slider.setValue(100)
+        self.temp_dst_img_path = None
+        self.temp_lerp_img_path = None
+
+        QApplication.processEvents()
 
         item = QListWidgetItem()
         item.setIcon(QIcon(self.src_img_path))
         item.setSizeHint(QSize(256,256))
         self.ui.list_src_show.setIconSize(QSize(256,256))
         self.ui.list_src_show.addItem(item)
-
         QApplication.processEvents()
+
 
 if __name__ == "__main__":
     QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)

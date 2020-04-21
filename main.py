@@ -139,7 +139,10 @@ if __name__ == "__main__":
         save_sample(pre_img, save_path)
 
         # 进行lerp操作
-        img_add = img_process.lerp_img(test_path,save_path,lerp_factor)
-        cv2.imwrite(save_path, img_add)
-        file_dir, file_name = os.path.split(save_path)
-        print("%s is save on %s dir"%(file_name,file_dir))
+        img_add, ret = img_process.lerp_img(test_path,save_path,lerp_factor)
+        if ret == 0:
+            cv2.imwrite(save_path, img_add)
+            file_dir, file_name = os.path.split(save_path)
+            print("%s is save on %s dir"%(file_name,file_dir))
+        else:
+            print("generate failed when processing %s" %test_path)

@@ -35,4 +35,4 @@ coll = COLLECT(exe,
                strip=False,
                upx=True,
                upx_exclude=[],
-               name='jx3AiPic_v10.0')
+               name='jx3AiPic_v10.1')

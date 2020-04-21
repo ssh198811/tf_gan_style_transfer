@@ -2,32 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6db08b88-87c0-40d0-bdcf-613f8bd10513" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/tf_gan_style_transfer.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loadDict.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/img_process.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/text_filter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ganilla.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runGui10.1.spec" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/icons/1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons/11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/icons/11.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/icons/2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/icons/3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/icons/4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons/6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/icons/6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons/7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/icons/7.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons/8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/icons/8.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons/9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/icons/9.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen_run_gui" beforeDir="false" afterPath="$PROJECT_DIR$/gen_run_gui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.spec" beforeDir="false" afterPath="$PROJECT_DIR$/main.spec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_configuration_file/model_path.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_configuration_file/model_path.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predict_img/test1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/predict_img/test1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predict_img/test2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/predict_img/test2.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/runGui.py" beforeDir="false" afterPath="$PROJECT_DIR$/runGui.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/runGui.spec" beforeDir="false" afterPath="$PROJECT_DIR$/runGui.spec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/img_process.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/img_process.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,9 +34,15 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Users\shishaohua.SHISHAOHUA1\Downloads\tf_gan_style_transfer" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.runGui">
     <configuration name="loadDict" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="tf_gan_style_transfer" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -90,7 +77,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="16 E:/测试/ dm 50 E:/测试/out/" />
+      <option name="PARAMETERS" value="16 E:/测试/ as 100 E:/测试/out/" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -126,8 +113,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main" />
         <item itemvalue="Python.runGui" />
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.loadDict" />
       </list>
     </recent_temporary>
@@ -158,54 +145,66 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="736" y="356" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587368819111">
+    <state x="736" y="356" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587451020413">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="736" y="356" key="#com.intellij.execution.impl.EditConfigurationsDialog/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587368819111" />
+    <state x="736" y="356" key="#com.intellij.execution.impl.EditConfigurationsDialog/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587451020413" />
+    <state x="1003" y="504" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587373874442">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1003" y="504" key="#com.intellij.fileTypes.FileTypeChooser/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587373874442" />
+    <state x="889" y="294" key="CommitChangelistDialog2" timestamp="1587384302236">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="889" y="294" key="CommitChangelistDialog2/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587384302236" />
     <state width="1878" height="466" key="DebuggerActiveHint" timestamp="1587367309921">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1878" height="466" key="DebuggerActiveHint/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587367309921" />
-    <state width="1837" height="400" key="GridCell.Tab.0.bottom" timestamp="1587368844338">
+    <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1587372244249">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1837" height="400" key="GridCell.Tab.0.bottom/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587368844338" />
-    <state width="1837" height="400" key="GridCell.Tab.0.center" timestamp="1587368844337">
+    <state x="1060" y="455" key="FileChooserDialogImpl/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587372244249" />
+    <state width="1808" height="400" key="GridCell.Tab.0.bottom" timestamp="1587451438421">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1837" height="400" key="GridCell.Tab.0.center/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587368844337" />
-    <state width="1837" height="400" key="GridCell.Tab.0.left" timestamp="1587368844337">
+    <state width="1808" height="400" key="GridCell.Tab.0.bottom/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587451438421" />
+    <state width="1808" height="400" key="GridCell.Tab.0.center" timestamp="1587451438420">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1837" height="400" key="GridCell.Tab.0.left/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587368844337" />
-    <state width="1837" height="400" key="GridCell.Tab.0.right" timestamp="1587368844338">
+    <state width="1808" height="400" key="GridCell.Tab.0.center/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587451438420" />
+    <state width="1808" height="400" key="GridCell.Tab.0.left" timestamp="1587451438420">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1837" height="400" key="GridCell.Tab.0.right/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587368844338" />
-    <state width="1730" height="492" key="GridCell.Tab.1.bottom" timestamp="1587367321060">
+    <state width="1808" height="400" key="GridCell.Tab.0.left/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587451438420" />
+    <state width="1808" height="400" key="GridCell.Tab.0.right" timestamp="1587451438420">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1730" height="492" key="GridCell.Tab.1.bottom/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587367321060" />
-    <state width="1730" height="492" key="GridCell.Tab.1.center" timestamp="1587367321060">
+    <state width="1808" height="400" key="GridCell.Tab.0.right/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587451438420" />
+    <state width="2103" height="492" key="GridCell.Tab.1.bottom" timestamp="1587451438419">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1730" height="492" key="GridCell.Tab.1.center/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587367321060" />
-    <state width="1730" height="492" key="GridCell.Tab.1.left" timestamp="1587367321060">
+    <state width="2103" height="492" key="GridCell.Tab.1.bottom/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587451438419" />
+    <state width="2103" height="492" key="GridCell.Tab.1.center" timestamp="1587451438419">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1730" height="492" key="GridCell.Tab.1.left/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587367321060" />
-    <state width="1730" height="492" key="GridCell.Tab.1.right" timestamp="1587367321060">
+    <state width="2103" height="492" key="GridCell.Tab.1.center/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587451438419" />
+    <state width="2103" height="492" key="GridCell.Tab.1.left" timestamp="1587451438419">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1730" height="492" key="GridCell.Tab.1.right/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587367321060" />
-    <state x="782" y="343" key="SettingsEditor" timestamp="1587113517532">
+    <state width="2103" height="492" key="GridCell.Tab.1.left/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587451438419" />
+    <state width="2103" height="492" key="GridCell.Tab.1.right" timestamp="1587451438419">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="782" y="343" key="SettingsEditor/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587113517532" />
-    <state x="965" y="525" key="com.intellij.ide.util.TipDialog" timestamp="1587347277048">
+    <state width="2103" height="492" key="GridCell.Tab.1.right/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587451438419" />
+    <state x="782" y="343" key="SettingsEditor" timestamp="1587452055697">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="965" y="525" key="com.intellij.ide.util.TipDialog/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587347277048" />
+    <state x="782" y="343" key="SettingsEditor/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587452055697" />
+    <state x="965" y="525" key="com.intellij.ide.util.TipDialog" timestamp="1587452342419">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="965" y="525" key="com.intellij.ide.util.TipDialog/3840.383.2560.1380/0.0.2560.1400@0.0.2560.1400" timestamp="1587452342419" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -219,6 +218,16 @@
           <url>file://$PROJECT_DIR$/main.py</url>
           <line>98</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/utils/img_process.py</url>
+          <line>25</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/utils/img_process.py</url>
+          <line>13</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
