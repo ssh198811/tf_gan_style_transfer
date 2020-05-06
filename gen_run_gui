@@ -1,6 +1,8 @@
-pyinstaller -D runGui.spec
-pyinstaller -D runGui10.1.spec
-pyinstaller -D main.spec
+pyinstaller -D runGui10.0_gpu.spec
+pyinstaller -D runGui10.0_cpu.spec
+pyinstaller -D runGui10.1_gpu.spec
+pyinstaller -D transfer_server_10.0.spec
+pyinstaller -D transfer_server_10.1.spec
 
 # pyinstaller 打包失败的问题
 pip install https://github.com/pyinstaller/pyinstaller/archive/develop.zip
@@ -10,4 +12,10 @@ pip install numpy==1.16.1
 
 # 查看cuda版本
 cd C:\Program Files\NVIDIA Corporation\NVSMI
-然后输入 nvidia-smi
+然后输入 nvidia-smipip
+
+# 查查看是否有cuda驱动
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA 这个目录
+
+#cudnn 安装
+https://developer.nvidia.com/rdp/cudnn-archive

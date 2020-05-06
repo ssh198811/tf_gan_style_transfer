@@ -3,7 +3,7 @@
 block_cipher = None
 data_map = [("ui/icons.tga","ui"),("tf_model_p","tf_model_p"),("icons","icons"),("source","source"),("predict_img","predict_img"),("temp","temp"),("dict.json",".")]
 
-a = Analysis(['main.py'],
+a = Analysis(['transfer_server.py'],
              pathex=['E:\\Users\\shishaohua.SHISHAOHUA1\\Downloads\\tf_gan_style_transfer'],
              binaries=[],
              datas=data_map,
@@ -21,12 +21,12 @@ exe = EXE(pyz,
           a.scripts,
           [],
           exclude_binaries=True,
-          name='main',
+          name='transfer_server',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
-          console=False )
+          console=True )
 coll = COLLECT(exe,
                a.binaries,
                a.zipfiles,
@@ -34,4 +34,4 @@ coll = COLLECT(exe,
                strip=False,
                upx=True,
                upx_exclude=[],
-               name='main')
+               name='transfer_server_v10.0')

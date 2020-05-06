@@ -27,7 +27,7 @@ exe = EXE(pyz,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
-          console=False , icon='E:\\Users\\shishaohua.SHISHAOHUA1\\Downloads\\tf_gan_style_transfer\\main.ico')
+          console=True , icon='E:\\Users\\shishaohua.SHISHAOHUA1\\Downloads\\tf_gan_style_transfer\\main.ico')
 coll = COLLECT(exe,
                a.binaries,
                a.zipfiles,
@@ -35,4 +35,4 @@ coll = COLLECT(exe,
                strip=False,
                upx=True,
                upx_exclude=[],
-               name='jx3AiPic_v10.0')
+               name='jx3AiPic_cpu_v10.0')

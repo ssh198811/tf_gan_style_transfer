@@ -1,4 +1,4 @@
-#coding: utf-8
+# coding: utf-8
 '''
 Author: Naive Wu
 Time: APR 16, 2019
@@ -15,59 +15,48 @@ import sys
 import cv2
 import loadDict
 from utils import img_process
+import time
 
+def init_tf_config():
+    gpus = tf.config.experimental.list_physical_devices('GPU')
+    if gpus:
+        try:
+            for gpu in gpus:
+                tf.config.experimental.set_memory_growth(gpu, True)
+        except RuntimeError as e:
+            print(e)
 
+def process_img(params=[16, "./source/", "as", 100, "./predict_img/", None]):
+    args_len = len(params)
 
-if __name__ == "__main__":
-
-    import argparse
-
-    # parser = argparse.ArgumentParser(description='generator image.')
-    # parser.add_argument('--min_factor', required=False,type=int, default=16, help='min scale factor')
-    # parser.add_argument('--img_path', type=str, default='./source/', help='Which picture do you want to work on')
-    # parser.add_argument('--use_style', type=str, default='as', help='Which style you want to transfer')
-    # parser.add_argument('--save_dir', required=False, type=str, default='./predict_img/', help='which dir you want to save img')
-    # parser.add_argument('--save_name', required=False,type=str, default=None, help='save img name')
-    # args = parser.parse_args()
-    ###########参数合法性处理############
-    sys_default_args = [16, "./source/", "as", 100, "./predict_img/", None]
-    min_factor = sys_default_args[0]
-    img_path = sys_default_args[1]
-    use_style = sys_default_args[2]
-    lerp_factor = sys_default_args[3]
-    save_dir = sys_default_args[4]
-    save_name = sys_default_args[5]
-
-    args_len = len(sys.argv)
-
+    if args_len > 0:
+        if params[0] is not None:
+            min_factor = int(params[0])
     if args_len > 1:
-        if sys.argv[1] != None:
-            min_factor = int(sys.argv[1])
+        if params[1] is not None:
+            img_path = params[1]
     if args_len > 2:
-        if sys.argv[2] != None:
-            img_path = sys.argv[2]
+        if params[2] is not None:
+            use_style = params[2]
     if args_len > 3:
-        if sys.argv[3] != None:
-            use_style = sys.argv[3]
+        if params[3] is not None:
+            lerp_factor = params[3]
     if args_len > 4:
-        if sys.argv[4] != None:
-            lerp_factor = sys.argv[4]
+        if params[4] is not None:
+            save_dir = params[4]
     if args_len > 5:
-        if sys.argv[5] != None:
-            save_dir = sys.argv[5]
-    if args_len > 6:
-        if sys.argv[6] != None:
-            save_name = sys.argv[6]
+        if params[5] is not None:
+            save_name = params[5]
 
-    if min_factor%16!=0:
-        min_factor=16
+    if min_factor % 16 != 0:
+        min_factor = 16
     img_path_list = []
     if os.path.exists(img_path):
         if os.path.isfile(img_path):
-            _,img_name=os.path.split(img_path)
+            _, img_name = os.path.split(img_path)
             img_path_list.append(img_path)
         elif os.path.isdir(img_path):
-            img_name=[]
+            img_name = []
             for file in os.listdir(img_path):
                 file_path = os.path.join(img_path, file)
                 if os.path.isfile(file_path):
@@ -84,28 +73,30 @@ if __name__ == "__main__":
         value = pair['model']
         model_path_dict[key] = value
 
-    model_names_list=list(model_path_dict.keys())
+    model_names_list = list(model_path_dict.keys())
     print(model_names_list)
     if use_style not in model_names_list:
-        use_style='miyaziki'
+        use_style = 'miyaziki'
     parameter_dict = np.load(model_path_dict[use_style]).item()
     model = Generator(in_chanel=3, out_chanel=3, parameter_dict=parameter_dict)
 
-    if len(img_path_list)>1:
-        save_name=None
-    if isinstance(img_name,str):
-        img_name=[img_name]
-    for i,path in enumerate(img_path_list):
-        test_path =img_path_list[i]
+    if len(img_path_list) > 1:
+        save_name = None
+    if isinstance(img_name, str):
+        img_name = [img_name]
+    for i, path in enumerate(img_path_list):
+        test_path = img_path_list[i]
+        print("%s is under processing" % test_path)
+        time_start = time.time()
         test_img = np.array(io.imread(test_path), dtype=np.float32) / 255.0 * 2.0 - 1
         h, w, c = np.shape(test_img)
-        print(h,w)
-        if c==1:
-            test_img=np.concatenate([test_img,test_img,test_img],axis=2)
-        elif c>3:
-             test_img = test_img[:, :, :3]
-             c=3
-             print('chanel num larger 3,not rgb')
+        print(h, w)
+        if c == 1:
+            test_img = np.concatenate([test_img, test_img, test_img], axis=2)
+        elif c > 3:
+            test_img = test_img[:, :, :3]
+            c = 3
+            print('chanel num larger 3,not rgb')
         ###########填补操作####################
         h_pad = np.ceil(h / min_factor) * min_factor - h
         if h_pad < 6 and h_pad != 0:
@@ -130,19 +121,22 @@ if __name__ == "__main__":
                               [[0, 0], [h_pad_up - 3, h_pad_down - 3], [w_pad_left - 3, w_pad_right - 3], [0, 0]])
         pre_img = model(test_img)
         pre_img = pre_img[0]
-        pre_img = pre_img[h_pad_up:h_pad_up + h, w_pad_left:w_pad_left + w,:c]
+        pre_img = pre_img[h_pad_up:h_pad_up + h, w_pad_left:w_pad_left + w, :c]
+
+        time_end = time.time()
+        print('time cost', time_end - time_start, 's')
         #############################存图片#############################################################
-        if save_name==None:
-            save_path = save_dir+img_name[i]
+        if save_name is None:
+            save_path = save_dir + img_name[i]
         else:
-            save_path = save_dir+save_name
+            save_path = save_dir + save_name
         save_sample(pre_img, save_path)
 
         # 进行lerp操作
-        img_add, ret = img_process.lerp_img(test_path,save_path,lerp_factor)
+        img_add, ret = img_process.lerp_img(test_path, save_path, lerp_factor)
         if ret == 0:
             cv2.imwrite(save_path, img_add)
             file_dir, file_name = os.path.split(save_path)
-            print("%s is save on %s dir"%(file_name,file_dir))
+            print("%s is save on %s dir" % (file_name, file_dir))
         else:
-            print("generate failed when processing %s" %test_path)
+            print("generate failed when processing %s" % test_path)
