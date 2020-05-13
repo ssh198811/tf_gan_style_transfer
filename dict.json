@@ -44,6 +44,11 @@
 			"name": "tr",
             "icon": "icons/11.jpg",
             "model": "tf_model_p/tr_model.npy"
-        }
+        },
+		{
+			"name": "shuicai0513",
+            "icon": "icons/12.jpg",
+            "model": "tf_model_p/shuicai0513_model.npy"
+        }	
     ]
 }

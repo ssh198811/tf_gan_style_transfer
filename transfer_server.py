@@ -10,7 +10,7 @@ PIPE_CMU_NAME = r'\\.\pipe\cmu_pipe'
 
 PIPE_BUFFER_SIZE = 65535
 msg_queue = queue.Queue(1024)
-update_flag = False
+
 
 def createPipe():
     while True:
@@ -42,47 +42,52 @@ def createPipe():
 
                         msg_queue.put(msg_str)
 
+                        try:
+                            _thread.start_new_thread(process_img, ())
+                            print("启动线程")
+                        except BaseException as e:
+                            print("Error: 无法启动线程 ", e)
+
                 except BaseException as e:
                     print("exception:", e)
                     break
         finally:
             try:
                 win32pipe.DisconnectNamedPipe(named_pipe)
-                update_flag = True
             except:
                 pass
 
-def send_msg(msg=""):
-    file_handle = win32file.CreateFile(PIPE_CMU_NAME,
-                                       win32file.GENERIC_READ | win32file.GENERIC_WRITE,
-                                       win32file.FILE_SHARE_WRITE, None,
-                                       win32file.OPEN_EXISTING, 0, None)
-    try:
-        print('send msg:', msg)
-        win32file.WriteFile(file_handle, msg.encode())
-        time.sleep(1)
 
-    finally:
+def send_msg(msg=""):
+    while True:
         try:
-            win32file.CloseHandle(file_handle)
-        except:
-            pass
+            file_handle = win32file.CreateFile(PIPE_CMU_NAME,
+                                               win32file.GENERIC_READ | win32file.GENERIC_WRITE,
+                                               win32file.FILE_SHARE_WRITE, None,
+                                               win32file.OPEN_EXISTING, 0, None)
+            print('send msg:', msg)
+            win32file.WriteFile(file_handle, msg.encode())
+            time.sleep(1)
+            break
+        except BaseException as e:
+            print("exception:", e)
+            continue
+        finally:
+            try:
+                win32file.CloseHandle(file_handle)
+            except BaseException as e:
+                print("exception:", e)
+
 
 def process_img():
-    while True:
-        while not msg_queue.empty():
-            msg = str(msg_queue.get())
-            params = msg.split(' ')
-            main.process_img(params)
-            send_msg(f"finish {msg}")
+    while not msg_queue.empty():
+        msg = str(msg_queue.get())
+        params = msg.split(' ')
+        main.process_img(params)
+    send_msg(f"finish {msg}")
+
 
 if __name__ == "__main__":
     main.init_tf_config()
-
-    try:
-        _thread.start_new_thread(process_img, ())
-        print("启动线程")
-    except BaseException as e:
-        print("Error: 无法启动线程 ", e)
 
     createPipe()
