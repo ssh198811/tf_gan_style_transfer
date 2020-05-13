@@ -99,29 +99,20 @@ def process_img(params=[16, "./source/", "as", 100, "./predict_img/", None]):
             print('chanel num larger 3,not rgb')
         ###########填补操作####################
         h_pad = np.ceil(h / min_factor) * min_factor - h
-        if h_pad < 6 and h_pad != 0:
-            h_pad += min_factor
+        # h_pad += min_factor
+        h_pad += 48
         w_pad = np.ceil(w / min_factor) * min_factor - w
-        if w_pad < 6 and w_pad != 0:
-            w_pad += min_factor
+        # w_pad += min_factor
+        w_pad += 48
         h_pad_up = int(h_pad // 2)
         h_pad_down = int(h_pad - h_pad_up)
         w_pad_left = int(w_pad // 2)
         w_pad_right = int(w_pad - w_pad_left)
         test_img = np.reshape(test_img, [1, h, w, 3])
-        if h_pad == 0 and w_pad >= 6:
-            test_img = tf.pad(test_img, [[0, 0], [0, 0], [3, 3], [0, 0]], mode="REFLECT")
-            test_img = tf.pad(test_img, [[0, 0], [0, 0], [w_pad_left - 3, w_pad_right - 3], [0, 0]])
-        elif w_pad == 0 and h_pad >= 6:
-            test_img = tf.pad(test_img, [[0, 0], [3, 3], [0, 0], [0, 0]], mode="REFLECT")
-            test_img = tf.pad(test_img, [[0, 0], [h_pad_up - 3, h_pad_down - 3], [0, 0], [0, 0]])
-        elif h_pad >= 6 and w_pad >= 6:
-            test_img = tf.pad(test_img, [[0, 0], [3, 3], [3, 3], [0, 0]], mode="REFLECT")
-            test_img = tf.pad(test_img,
-                              [[0, 0], [h_pad_up - 3, h_pad_down - 3], [w_pad_left - 3, w_pad_right - 3], [0, 0]])
+        test_img = tf.pad(test_img, [[0, 0], [h_pad_up, h_pad_down], [w_pad_left, w_pad_right], [0, 0]], mode="REFLECT")
         pre_img = model(test_img)
         pre_img = pre_img[0]
-        pre_img = pre_img[h_pad_up:h_pad_up + h, w_pad_left:w_pad_left + w, :c]
+        pre_img = pre_img[h_pad_up:h_pad_up + h, w_pad_left:w_pad_left + w,:c]
 
         time_end = time.time()
         print('time cost', time_end - time_start, 's')

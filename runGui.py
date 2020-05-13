@@ -134,11 +134,11 @@ class ApplicationWindow(QMainWindow):
              print('chanel num larger 3,not rgb')
         ###########填补操作####################
         h_pad = np.ceil(h / min_factor) * min_factor - h
-        if h_pad < 6 and h_pad != 0:
-            h_pad += min_factor
+        # if h_pad < 6 and h_pad != 0:
+        h_pad += 48
         w_pad = np.ceil(w / min_factor) * min_factor - w
-        if w_pad < 6 and w_pad != 0:
-            w_pad += min_factor
+        # if w_pad < 6 and w_pad != 0:
+        w_pad += 48
         h_pad_up = int(h_pad // 2)
         h_pad_down = int(h_pad - h_pad_up)
         w_pad_left = int(w_pad // 2)
