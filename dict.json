@@ -50,5 +50,17 @@
             "icon": "icons/12.jpg",
             "model": "tf_model_p/shuicai0513_model.npy"
         }	
+		,
+		{
+			"name": "xhc0518_model",
+            "icon": "icons/13.jpg",
+            "model": "tf_model_p/xhc0518_model.npy"
+        }	
+		,
+		{
+			"name": "yichui0518_model",
+            "icon": "icons/14.jpg",
+            "model": "tf_model_p/yichui0518_model.npy"
+        }	
     ]
 }
